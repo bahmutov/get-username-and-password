@@ -40,7 +40,8 @@
     }
   },
   "dependencies": {
-    "bluebird": "2.9.34"
+    "bluebird": "2.9.34",
+    "inquirer": "0.9.0"
   },
   "devDependencies": {
     "eslint": "1.1.0",

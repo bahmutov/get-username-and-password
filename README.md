@@ -8,6 +8,25 @@
 [![dependencies][get-username-and-password-dependencies-image] ][get-username-and-password-dependencies-url]
 [![devdependencies][get-username-and-password-devdependencies-image] ][get-username-and-password-devdependencies-url]
 
+    npm install --save get-username-and-password
+
+To use
+
+```js
+getUsernameAndPassword('just an example')
+  .then(function (info) {
+    console.log('you entered username "%s" and password "%s"',
+      info.username, info.password);
+  });
+```
+
+    just an example
+    ? your username / email gleb
+    ? your password ****
+    you entered username "gleb" and password "ffff"
+
+Built on top of [inquirer](https://www.npmjs.com/package/inquirer).
+
 Related: [inquirer-confirm](https://github.com/bahmutov/inquirer-confirm) - simple CLI yes / no as a promise.
 
 ### Small print
