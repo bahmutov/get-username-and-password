@@ -25,6 +25,15 @@ getUsernameAndPassword('just an example')
     ? your password ****
     you entered username "gleb" and password "ffff"
 
+You can also provide either field via the environment variables, for example
+
+    $ USERNAME=gleb node get-username-and-password.js 
+    just an example
+    ? your password ***
+    you entered username "gleb" and password "fff"
+
+Environment variables: USERNAME, PASSWORD
+
 Built on top of [inquirer](https://www.npmjs.com/package/inquirer).
 
 Related: [inquirer-confirm](https://github.com/bahmutov/inquirer-confirm) - simple CLI yes / no as a promise.
