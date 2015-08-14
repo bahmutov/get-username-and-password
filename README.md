@@ -13,6 +13,7 @@
 To use
 
 ```js
+var getUsernameAndPassword = reqiure('get-username-and-password');
 getUsernameAndPassword('just an example')
   .then(function (info) {
     console.log('you entered username "%s" and password "%s"',
