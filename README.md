@@ -35,6 +35,17 @@ You can also provide either field via the environment variables, for example
 
 Environment variables: USERNAME, PASSWORD
 
+You can also provide username and / or password via options object
+
+```js
+var getUsernameAndPassword = reqiure('get-username-and-password');
+getUsernameAndPassword({
+  title: 'please enter the login info',
+  username: 'john'
+}).then(...);
+// will ask for the password only
+```
+
 Built on top of [inquirer](https://www.npmjs.com/package/inquirer).
 
 Related: [inquirer-confirm](https://github.com/bahmutov/inquirer-confirm) - simple CLI yes / no as a promise.
