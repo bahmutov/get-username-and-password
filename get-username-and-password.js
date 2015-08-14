@@ -2,9 +2,11 @@ var Promise = require('bluebird');
 var inq = require('inquirer');
 
 function merge(answers, values) {
-  var merged = JSON.parse(JSON.stringify(answers));
+  var merged = answers;
   Object.keys(values).forEach(function (key) {
-    merged[key] = values[key];
+    if (!merged[key]) {
+      merged[key] = values[key];
+    }
   });
   return merged;
 }
@@ -16,21 +18,20 @@ function getUsernameAndPassword(options) {
     };
   }
   options = options || {};
-  var environmentValues = {};
+  var environmentValues = {
+    username: process.env.USERNAME || options.username,
+    password: process.env.PASSWORD || options.password
+  };
   var questions = [];
 
-  if (process.env.USERNAME) {
-    environmentValues.username = process.env.USERNAME;
-  } else {
+  if (!environmentValues.username) {
     questions.push({
       name: 'username',
       type: 'input',
       message: 'your username / email'
     });
   }
-  if (process.env.PASSWORD) {
-    environmentValues.password = process.env.PASSWORD;
-  } else {
+  if (!environmentValues.password) {
     questions.push({
       name: 'password',
       type: 'password',
