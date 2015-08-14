@@ -4,7 +4,8 @@
   "description": "Promise-returning CLI function that asks the user the username and password to login, or grabs from environment",
   "main": "get-username-and-password.js",
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint . && npm run style",
+    "style": "jscs *.js --fix"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
   },
   "devDependencies": {
     "eslint": "1.1.0",
+    "jscs": "2.1.0",
     "pre-git": "0.6.2"
   }
 }
