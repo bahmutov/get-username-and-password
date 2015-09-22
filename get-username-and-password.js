@@ -11,6 +11,14 @@ function merge(answers, values) {
   return merged;
 }
 
+function hasQuestions(questions) {
+  return questions.length;
+}
+
+function isTerminal() {
+  return process.stdout.isTTY;
+}
+
 function getUsernameAndPassword(options) {
   if (typeof options === 'string') {
     options = {
@@ -37,6 +45,10 @@ function getUsernameAndPassword(options) {
       type: 'password',
       message: 'your password'
     });
+  }
+
+  if (hasQuestions(questions) && !isTerminal()) {
+    return Promise.reject('Not a terminal');
   }
 
   if (environmentValues.username && environmentValues.password) {

@@ -46,6 +46,8 @@ getUsernameAndPassword({
 // will ask for the password only
 ```
 
+If there are questions, and the STDOUT is not a terminal, the promise will be rejected.
+
 Built on top of [inquirer](https://www.npmjs.com/package/inquirer).
 
 Related: [inquirer-confirm](https://github.com/bahmutov/inquirer-confirm) - simple CLI yes / no as a promise.
